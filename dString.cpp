@@ -52,8 +52,22 @@ ostream & operator <<(ostream &out,const dString &in1)
 	return(out);
 }
 
-char* operator >>(istream & in, const dString &dstr)
+istream &operator >>(istream & in, dString &dstr)
 {
-	in>>dstr.acStr;
-	return(dstr.acStr);
+	char a='a';
+	char *ptr=(char*)malloc(sizeof(char));
+	char *temp;
+	temp=ptr;
+	while(a!='\n')
+	{
+		a=getchar();
+		*temp=a;
+		++temp;
+	}
+	*(--temp)='\0';
+	
+	//in>>ptr>>(temp-ptr);
+	dstr.acStr=ptr;
+	dstr.len=(temp-ptr);
+	return(in);
 }

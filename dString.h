@@ -21,7 +21,7 @@ public:
 	void operator= (char*);
 	dString operator+ (dString& in2);
 	friend ostream& operator <<(ostream&, const dString&);
-	friend char* operator >>(istream&, const dString&);
+	friend istream & operator >>(istream&, dString&);
 	friend int length(char*);
 	friend int length(dString);
 };
