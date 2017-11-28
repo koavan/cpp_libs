@@ -43,6 +43,7 @@ dString dString::operator+(dString& in2)
 		*(rstr.acStr+t)=*(in2.acStr+l);
 	}
 	*(rstr.acStr+t)='\0';
+	rstr.len=i+j;
 	return(rstr);
 }
 
@@ -70,4 +71,20 @@ istream &operator >>(istream & in, dString &dstr)
 	dstr.acStr=ptr;
 	dstr.len=(temp-ptr);
 	return(in);
+}
+
+int compare(dString a, dString b)
+{
+	int i;
+	int len1,len2;
+	len1=length(a);
+	len2=length(b);
+	for(i=0;i<len1 || i<len2;i++)
+	{
+		if(*(a.acStr+i)>*(b.acStr+i))
+			return 1;
+		else if(*(a.acStr+i)<*(b.acStr+i))
+			return -1;
+	}
+	return 0;
 }

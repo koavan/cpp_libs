@@ -10,6 +10,7 @@ class dString
 {
 private:
 	char *acStr;
+public:
 	int len;
 public:
 	dString()
@@ -24,6 +25,7 @@ public:
 	friend istream & operator >>(istream&, dString&);
 	friend int length(char*);
 	friend int length(dString);
+	friend int compare(dString,dString);
 };
 
 
