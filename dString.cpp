@@ -3,12 +3,16 @@
 
 int length(char *lin)
 {
-	return(strlen(lin));
+	int l=0;
+	for(;*(lin++)!='\0';l++);
+	return(l);
 }
 
 int length(dString i)
 {
-	return(strlen(i.acStr));
+	int l=0;
+	for(;*(i.acStr++)!='\0';l++);
+	return(l);
 }
 
 void dString::operator =(char* in)
@@ -16,7 +20,7 @@ void dString::operator =(char* in)
 	int l,i;
 	if(len==0 && acStr==NULL)
 	{
-		l=strlen(in);
+		l=length(in);
 		acStr=(char*)malloc(l*sizeof(in));
 		for(i=0;i<l;i++)
 		{
