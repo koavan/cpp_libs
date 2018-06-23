@@ -18,16 +18,21 @@ int length(dString i)
 void dString::operator =(char* in)
 {
 	int l,i;
+	l=length(in);	
 	if(len==0 && acStr==NULL)
 	{
-		l=length(in);
 		acStr=(char*)malloc(l*sizeof(in));
-		for(i=0;i<l;i++)
-		{
-			*(acStr+i)=*(in+i);
-		}
-		*(acStr+i)='\0';
 	}
+	else
+	{
+		acStr=(char *)realloc(acStr,l);
+	}
+	for(i=0;i<l;i++)
+	{
+		*(acStr+i)=*(in+i);
+	}
+	*(acStr+i)='\0';
+	len=l;
 }
 
 dString dString::operator+(dString& in2)
@@ -86,9 +91,9 @@ int compare(dString a, dString b)
 	for(i=0;i<len1 || i<len2;i++)
 	{
 		if(*(a.acStr+i)>*(b.acStr+i))
-			return 1;
-		else if(*(a.acStr+i)<*(b.acStr+i))
 			return -1;
+		else if(*(a.acStr+i)<*(b.acStr+i))
+			return 1;
 	}
 	return 0;
 }

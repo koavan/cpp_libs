@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	cout<<"Enter string 2 : ";
 	cin>>s2;
 	//s1="Hai ";
-	//s2="Dayan";
+	s2="rrrr";
 	
 	slen=length(s1);
 	cout<<"s1 = "<<s1<<"\t("<<slen<<" chars long)"<<endl;
