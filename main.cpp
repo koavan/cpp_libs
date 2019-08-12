@@ -5,11 +5,9 @@ int main(int argc, char **argv)
 {
 	String s1,s2,s3;
 	int slen;
-	cout<<"Enter string 1 : ";
-	cin>>s1;
 	cout<<"Enter string 2 : ";
 	cin>>s2;
-	//s1="Hai ";
+	s1="Hai ";
 	s2="rrrr";
 	
 	slen=length(s1);
